@@ -2,15 +2,12 @@
 
 // Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
 
+const panagramBank = " abcdefghijklmnopqrstwxyz";
 const checkPangram = (alphabet) => {
-  let check = " ";
-  const panagramBank = " abcdefghijklmnopqrstwxyzABCDEFGHIJKLMNOPQRSTWXYZ";
-  for (let i = 0; i < alphabet.length; i++) {
-    check += alphabet[i];
-    if (check.includes(panagram)) {
-      return true;
-    } else {
-      false;
+  let check = true;
+  for (let i = 0; i < panagramBank.length; i++) {
+    if (!alphabet.toLowerCase().includes(panagramBank[i])) {
+      check = false;
     }
   }
 
